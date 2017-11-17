@@ -113,3 +113,87 @@ a {
   color: #BD5D38; }
   a:hover, a:focus, a:active {
     color: #824027; }
+
+	
+	
+	
+.btn span.icon,
+.btn span.title {
+    display: block;
+    position: relative;
+    line-height: 40px;
+    padding: 0 25px 0 20px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.btn span.left {
+	 color: #fff;
+    float: left;
+    border-radius: 6px 0 0 6px;
+    -moz-border-radius: 6px 0 0 6px;
+    -webkit-border-radius: 6px 0 0 6px;
+}
+.btn span.right {
+	 color: #fff;
+    float: right;
+    border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    -webkit-border-radius: 0 6px 6px 0;
+}
+.btn span.icon {
+    font-size: 17px;
+    background-color: #00967f;
+    -webkit-box-shadow: 0 3px 0 0 #007261;
+    box-shadow: 0 3px 0 0 #007261;
+    text-shadow: 0px 1px 1px #888;
+}
+.btn span.title {
+	font-size: 13px;
+    -webkit-box-shadow: 0 3px 0 0 #00ae94;
+    box-shadow: 0 3px 0 0 #00ae94;
+    background-color: #00cdae;
+}
+
+.btn span.slant-left,
+.btn span.slant-right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 0 solid transparent;
+    border-bottom: 40px solid transparent;
+    -webkit-transition: all .15s;
+    -transition: all .15s;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+}
+.btn.left span.slant-right {
+    left: 0;
+    -webkit-box-shadow: -10px 0 0 0 #00967f, -10px 3px 0 0 #007261;
+    box-shadow: -10px 0 0 0 #00967f, -10px 3px 0 0 #007261;
+    border-left: 10px solid #00967f;
+}
+.btn.right span.slant-right {
+    left: 0;
+    -webkit-box-shadow: -10px 0 0 0 #00cdae, -10px 3px 0 0 #00ae94;
+    box-shadow: -10px 0 0 0 #00cdae, -10px 3px 0 0 #00ae94;
+    border-left: 10px solid #00cdae;
+}
+.btn.left span.slant-left {
+    right: 0;
+    -webkit-box-shadow: 10px 0 0 0 #00cdae, 10px 3px 0 0 #00ae94;
+    box-shadow: 10px 0 0 0 #00cdae, 10px 3px 0 0 #00ae94;
+    border-right: 10px solid #00cdae;
+}
+.btn.right span.slant-left {
+    right: 0;
+    -webkit-box-shadow: 10px 0 0 0 #00967f, 10px 3px 0 0 #007261;
+    box-shadow: 10px 0 0 0 #00967f, 10px 3px 0 0 #007261;
+    border-right: 10px solid #00967f;
+}
+.btn:hover span.slant-left {
+    right: 10px;
+}
+.btn:hover span.slant-right {
+    left: 10px;
+}
