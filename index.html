@@ -282,7 +282,19 @@ o	Documentation of the design<br>
               <i class="devicons devicons-npm"></i>
             </li>
           </ul>
-			 <div id="piechart_3d" style="width: 600px; height: 400px;"></div>
+		  <div class="row">
+    <div class="col">
+      <div id="piechart_3d" style="min-width: 50%; height: 400px;"></div>
+    </div>
+    <div class="col">
+     <div id="chart_div" style="min-width: 50%; height: 400px;"></div>
+    </div>
+   <!--  <div class="col">
+      3 of 3
+    </div> -->
+  </div>
+</div>
+			
           <div class="subheading mb-3">Workflow</div>
           <ul class="fa-ul mb-0">
             <li>
@@ -456,12 +468,12 @@ o	Documentation of the design<br>
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Technology', 'Part'],
+          ['Spotfire',     30],
+          ['Tableau',      15],
+          ['SQL',  20],
+          ['HTML', 20],
+          ['JAVA',    15]
         ]);
 
         var options = {
@@ -470,6 +482,31 @@ o	Documentation of the design<br>
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+	    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Spotfire', 'SQL','BW','Java','HTML'],
+          ['2012',  0,      0,30,70,80],
+          ['2013',  0,      40,80,70,80],
+          ['2014',  0,       50,60,50,40],
+          ['2015',  60,      50,0,40,60],
+		  ['2016',  100,      60,0,40,70],
+		  ['2017',  90,      40,30,60,80]
+        ]);
+
+        var options = {
+          title: 'Skill Utilization',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
